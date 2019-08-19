@@ -278,6 +278,42 @@
 			"revisionTime": "2017-03-01T03:54:11Z"
 		},
 		{
+			"checksumSHA1": "rGykhfOlbiesRXv6ZYvdiHbYP7w=",
+			"path": "github.com/gogs/gogs/pkg/bindata",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
+			"checksumSHA1": "cnUFUl4xGB6Gp9bxxsjmkyfnHrE=",
+			"path": "github.com/gogs/gogs/pkg/markup",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
+			"checksumSHA1": "GI4/rBWAneTxXt0mriQFdTe4JM8=",
+			"path": "github.com/gogs/gogs/pkg/process",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
+			"checksumSHA1": "T5UAIzrVoHHVpemHSSpJilrymc0=",
+			"path": "github.com/gogs/gogs/pkg/setting",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
+			"checksumSHA1": "Y1jn+pYo09rIjWdE7LXgS7dO1wk=",
+			"path": "github.com/gogs/gogs/pkg/tool",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
+			"checksumSHA1": "PXkKOAtZT68f245W8/cctC8nwL4=",
+			"path": "github.com/gogs/gogs/pkg/user",
+			"revision": "82700ea95a4a38fe22cf7d16041ab42e525bad8c",
+			"revisionTime": "2019-08-05T00:20:51Z"
+		},
+		{
 			"checksumSHA1": "yIkYzW7bzAD81zHyuCNmEj4+oxQ=",
 			"path": "github.com/gopherjs/gopherjs/js",
 			"revision": "2b1d432c8a82c9bff0b0baffaeb3ec6e92974112",
@@ -654,6 +690,30 @@
 			"path": "github.com/unidoc/unidoc/pdf/ps",
 			"revision": "978d94da3322cf4e146894e34daf5bda45961b77",
 			"revisionTime": "2017-11-08T21:19:06Z"
+		},
+		{
+			"checksumSHA1": "FdQbOQKgCpyMX8R6et3YeWjGU9o=",
+			"path": "github.com/unknwon/cae",
+			"revision": "c6aac99ea2cae2ebaf23f26f76b04fe3fcfc9f8c",
+			"revisionTime": "2016-07-15T03:28:08Z"
+		},
+		{
+			"checksumSHA1": "R3mpG5aLTcM0drCw+dVcUf/TM+U=",
+			"path": "github.com/unknwon/com",
+			"revision": "757f69c95f3e6e3ef823a57bfc3b4ca50804523e",
+			"revisionTime": "2019-08-04T04:29:17Z"
+		},
+		{
+			"checksumSHA1": "kMVdlWRgSB2FpHkQOW7c+MCWLjc=",
+			"path": "github.com/unknwon/i18n",
+			"revision": "5c6446a380b662d6dc54479d3e00bb4ea5a4e19d",
+			"revisionTime": "2019-08-05T06:56:54Z"
+		},
+		{
+			"checksumSHA1": "xWoI+9iWT8T3E0tEdP0Eg9/KXEQ=",
+			"path": "github.com/unknwon/paginater",
+			"revision": "45e5d631308ea359946e761484147982c978d0df",
+			"revisionTime": "2017-04-05T23:39:47Z"
 		},
 		{
 			"checksumSHA1": "j+CXOooI5VyVEhKPTJkuL/GHPE0=",
