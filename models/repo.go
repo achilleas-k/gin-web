@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Unknwon/cae/zip"
-	"github.com/Unknwon/com"
 	"github.com/go-xorm/xorm"
 	"github.com/mcuadros/go-version"
 	"github.com/nfnt/resize"
+	"github.com/unknwon/cae/zip"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 	"gopkg.in/ini.v1"
 

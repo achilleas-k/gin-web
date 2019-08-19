@@ -13,9 +13,9 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/Unknwon/com"
 	"github.com/pquerna/otp"
 	"github.com/pquerna/otp/totp"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 
 	"github.com/G-Node/gogs/models"

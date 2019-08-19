@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Unknwon/com"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/unknwon/com"
 	"gopkg.in/macaron.v1"
 
 	"github.com/G-Node/gogs/models"

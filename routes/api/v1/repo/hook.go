@@ -5,8 +5,8 @@
 package repo
 
 import (
-	"github.com/Unknwon/com"
-	"github.com/json-iterator/go"
+	jsoniter "github.com/json-iterator/go"
+	"github.com/unknwon/com"
 
 	api "github.com/gogs/go-gogs-client"
 

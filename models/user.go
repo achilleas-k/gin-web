@@ -22,9 +22,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/Unknwon/com"
 	"github.com/go-xorm/xorm"
 	"github.com/nfnt/resize"
+	"github.com/unknwon/com"
 	"golang.org/x/crypto/pbkdf2"
 	log "gopkg.in/clog.v1"
 

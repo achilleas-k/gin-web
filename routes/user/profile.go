@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Unknwon/paginater"
+	"github.com/unknwon/paginater"
 
 	"github.com/G-Node/gogs/models"
 	"github.com/G-Node/gogs/pkg/context"

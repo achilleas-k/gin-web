@@ -15,7 +15,6 @@ import (
 	"path"
 	"strings"
 
-	"github.com/Unknwon/com"
 	"github.com/go-macaron/binding"
 	"github.com/go-macaron/cache"
 	"github.com/go-macaron/captcha"
@@ -26,6 +25,7 @@ import (
 	"github.com/go-macaron/toolbox"
 	"github.com/mcuadros/go-version"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/unknwon/com"
 	"github.com/urfave/cli"
 	log "gopkg.in/clog.v1"
 	"gopkg.in/macaron.v1"

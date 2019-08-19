@@ -21,8 +21,8 @@ import (
 	"github.com/G-Node/gogs/pkg/template"
 	"github.com/G-Node/gogs/pkg/template/highlight"
 	"github.com/G-Node/gogs/pkg/tool"
-	"github.com/Unknwon/paginater"
 	"github.com/go-macaron/captcha"
+	"github.com/unknwon/paginater"
 	log "gopkg.in/clog.v1"
 )
 

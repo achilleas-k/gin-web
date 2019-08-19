@@ -14,13 +14,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 	"golang.org/x/crypto/ssh"
 	log "gopkg.in/clog.v1"
 
+	"syscall"
+
 	"github.com/G-Node/gogs/models"
 	"github.com/G-Node/gogs/pkg/setting"
-	"syscall"
 )
 
 func cleanCommand(cmd string) string {

@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Unknwon/com"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/unknwon/com"
 
 	git "github.com/G-Node/git-module"
 	api "github.com/gogs/go-gogs-client"

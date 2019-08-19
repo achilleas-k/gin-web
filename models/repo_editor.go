@@ -16,8 +16,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Unknwon/com"
 	gouuid "github.com/satori/go.uuid"
+	"github.com/unknwon/com"
 
 	git "github.com/G-Node/git-module"
 

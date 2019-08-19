@@ -15,13 +15,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Unknwon/com"
 	_ "github.com/denisenkom/go-mssqldb"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/core"
 	"github.com/go-xorm/xorm"
-	"github.com/json-iterator/go"
+	jsoniter "github.com/json-iterator/go"
 	_ "github.com/lib/pq"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 
 	"github.com/G-Node/gogs/models/migrations"

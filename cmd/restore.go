@@ -8,9 +8,9 @@ import (
 	"os"
 	"path"
 
-	"github.com/Unknwon/cae/zip"
-	"github.com/Unknwon/com"
 	"github.com/mcuadros/go-version"
+	"github.com/unknwon/cae/zip"
+	"github.com/unknwon/com"
 	"github.com/urfave/cli"
 	log "gopkg.in/clog.v1"
 	"gopkg.in/ini.v1"

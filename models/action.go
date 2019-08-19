@@ -12,9 +12,9 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/Unknwon/com"
 	"github.com/go-xorm/xorm"
 	jsoniter "github.com/json-iterator/go"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 
 	"github.com/G-Node/git-module"

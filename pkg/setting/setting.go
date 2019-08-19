@@ -16,12 +16,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Unknwon/com"
 	_ "github.com/go-macaron/cache/memcache"
 	_ "github.com/go-macaron/cache/redis"
 	"github.com/go-macaron/session"
 	_ "github.com/go-macaron/session/redis"
 	"github.com/mcuadros/go-version"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 	"gopkg.in/ini.v1"
 

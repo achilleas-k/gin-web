@@ -7,7 +7,7 @@ import (
 
 	"github.com/G-Node/gogs/pkg/setting"
 	"github.com/G-Node/gogs/pkg/tool"
-	"github.com/Unknwon/com"
+	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 )
 
