@@ -18,13 +18,13 @@ import (
 	"github.com/Unknwon/com"
 	"github.com/go-macaron/binding"
 	"github.com/go-macaron/cache"
-	"github.com/go-macaron/captcha"
 	"github.com/go-macaron/csrf"
 	"github.com/go-macaron/gzip"
 	"github.com/go-macaron/i18n"
 	"github.com/go-macaron/session"
 	"github.com/go-macaron/toolbox"
 	"github.com/mcuadros/go-version"
+	captcha "github.com/mojocn/base64Captcha"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/urfave/cli"
 	log "gopkg.in/clog.v1"
@@ -143,9 +143,7 @@ func newMacaron() *macaron.Macaron {
 		AdapterConfig: setting.CacheConn,
 		Interval:      setting.CacheInterval,
 	}))
-	m.Use(captcha.Captchaer(captcha.Options{
-		SubURL: setting.AppSubURL,
-	}))
+	m.Use(captchaer())
 	m.Use(session.Sessioner(setting.SessionConfig))
 	m.Use(csrf.Csrfer(csrf.Options{
 		Secret:     setting.SecretKey,
@@ -168,6 +166,21 @@ func newMacaron() *macaron.Macaron {
 		Logger: dav.Logger}
 	m.Map(h)
 	return m
+}
+
+// captchaer returns a Macaron Handler for using base64Captcha for captchas.
+func captchaer() macaron.Handler {
+	lineOptions := captcha.OptionShowHollowLine | captcha.OptionShowSlimeLine | captcha.OptionShowSineLine
+	bgcolour := captcha.RandLightColor()
+	mathCaptcha := captcha.NewDriverMath(60, 240, 110, lineOptions, &bgcolour, nil)
+	return func(ctx *macaron.Context, cache cache.Cache) {
+		if strings.HasPrefix(ctx.Req.URL.Path, "/captcha/") {
+			item, _ := mathCaptcha.DrawCaptcha("Hm?")
+			item.WriteTo(ctx.Resp)
+		}
+		ctx.Data["Captcha"] = mathCaptcha
+		ctx.Map(mathCaptcha)
+	}
 }
 
 func runWeb(c *cli.Context) error {
