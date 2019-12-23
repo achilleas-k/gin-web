@@ -19,7 +19,7 @@ import (
 	gouuid "github.com/satori/go.uuid"
 	"github.com/unknwon/com"
 
-	git "github.com/G-Node/git-module"
+	git "github.com/gogs/git-module"
 
 	"github.com/G-Node/gogs/internal/db/errors"
 	"github.com/G-Node/gogs/internal/process"

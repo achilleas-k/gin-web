@@ -5,7 +5,7 @@
 package repo
 
 import (
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	"github.com/go-macaron/captcha"
 
 	"github.com/G-Node/gogs/internal/context"

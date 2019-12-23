@@ -27,7 +27,7 @@ import (
 	"gopkg.in/ini.v1"
 	"xorm.io/xorm"
 
-	git "github.com/G-Node/git-module"
+	git "github.com/gogs/git-module"
 	api "github.com/gogs/go-gogs-client"
 
 	"github.com/G-Node/gogs/internal/avatar"

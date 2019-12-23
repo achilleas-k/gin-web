@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 

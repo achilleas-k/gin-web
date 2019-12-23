@@ -9,7 +9,7 @@ import (
 
 	log "gopkg.in/clog.v1"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	api "github.com/gogs/go-gogs-client"
 
 	"github.com/G-Node/gogs/internal/context"

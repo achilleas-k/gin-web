@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	api "github.com/gogs/go-gogs-client"
 	jsoniter "github.com/json-iterator/go"
 

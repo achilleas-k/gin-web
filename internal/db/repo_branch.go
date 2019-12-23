@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	"github.com/unknwon/com"
 
 	"github.com/G-Node/gogs/internal/db/errors"

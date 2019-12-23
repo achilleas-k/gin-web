@@ -16,7 +16,7 @@ import (
 	"github.com/unknwon/paginater"
 	log "gopkg.in/clog.v1"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	"github.com/G-Node/libgin/libgin/annex"
 
 	"github.com/G-Node/gogs/internal/context"

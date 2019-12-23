@@ -11,7 +11,7 @@ import (
 
 	"io/ioutil"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 	gctx "github.com/G-Node/gogs/internal/context"
 	"github.com/G-Node/gogs/internal/db"
 	"github.com/G-Node/gogs/internal/setting"

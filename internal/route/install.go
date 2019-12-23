@@ -17,7 +17,7 @@ import (
 	"gopkg.in/macaron.v1"
 	"xorm.io/xorm"
 
-	"github.com/G-Node/git-module"
+	"github.com/gogs/git-module"
 
 	"github.com/G-Node/gogs/internal/context"
 	"github.com/G-Node/gogs/internal/cron"

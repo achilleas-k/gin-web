@@ -11,7 +11,7 @@ import (
 	jsoniter "github.com/json-iterator/go"
 	"github.com/unknwon/com"
 
-	git "github.com/G-Node/git-module"
+	git "github.com/gogs/git-module"
 	api "github.com/gogs/go-gogs-client"
 
 	"github.com/G-Node/gogs/internal/context"
