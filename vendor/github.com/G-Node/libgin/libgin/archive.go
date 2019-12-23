@@ -7,6 +7,8 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/gogs/git-module"
 )
 
 // MakeZip recursively writes all the files found under the provided sources to
@@ -85,4 +87,32 @@ func MakeZip(dest io.Writer, source ...string) error {
 		}
 	}
 	return nil
+}
+
+type ArchiveType int
+
+const (
+	ArchiveZip ArchiveType = iota + 1
+	ArchiveTarGz
+	ArchiveGIN
+)
+
+func CreateArchiveGIN(target string, cloneURL string, tmpdir string) error {
+	clonedir := filepath.Join(tmpdir, "archives", filepath.Base(strings.TrimSuffix(cloneURL, ".git")))
+	defer os.RemoveAll(clonedir)
+	_, err := git.NewCommand("clone", cloneURL, clonedir).Run()
+	if err != nil {
+		return err
+	}
+	_, err = git.NewCommand("remote", "set-url", "origin", cloneURL).RunInDir(clonedir)
+	if err != nil {
+		return err
+	}
+	fp, err := os.Create(target)
+	defer fp.Close()
+	if err != nil {
+		return err
+	}
+	err = MakeZip(fp, clonedir)
+	return err
 }

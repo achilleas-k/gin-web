@@ -10,6 +10,7 @@ import (
 	"path"
 	"strings"
 
+	"github.com/G-Node/libgin/libgin"
 	"github.com/unknwon/com"
 	log "gopkg.in/clog.v1"
 
@@ -275,22 +276,22 @@ func Download(c *context.Context) {
 		refName     string
 		ext         string
 		archivePath string
-		archiveType git.ArchiveType
+		archiveType libgin.ArchiveType
 	)
 
 	switch {
 	case strings.HasSuffix(uri, ".gin.zip"):
 		ext = ".gin.zip"
 		archivePath = path.Join(c.Repo.GitRepo.Path, "archives/gin")
-		archiveType = git.ArchiveGIN
+		archiveType = libgin.ArchiveGIN
 	case strings.HasSuffix(uri, ".zip"):
 		ext = ".zip"
 		archivePath = path.Join(c.Repo.GitRepo.Path, "archives/zip")
-		archiveType = git.ArchiveZip
+		archiveType = libgin.ArchiveZip
 	case strings.HasSuffix(uri, ".tar.gz"):
 		ext = ".tar.gz"
 		archivePath = path.Join(c.Repo.GitRepo.Path, "archives/targz")
-		archiveType = git.ArchiveTarGz
+		archiveType = libgin.ArchiveTarGz
 
 	default:
 		log.Trace("Unknown format: %s", uri)
@@ -337,7 +338,13 @@ func Download(c *context.Context) {
 
 	archivePath = path.Join(archivePath, tool.ShortSHA1(commit.ID.String())+ext)
 	if !com.IsFile(archivePath) {
-		if err := commit.CreateArchive(archivePath, archiveType, c.Repo.Repository.CloneLink().SSH); err != nil {
+		var err error
+		if archiveType == libgin.ArchiveGIN {
+			err = libgin.CreateArchiveGIN(archivePath, c.Repo.Repository.CloneLink().SSH, setting.Repository.Upload.TempPath)
+		} else {
+			err = commit.CreateArchive(archivePath, git.ArchiveType(archiveType))
+		}
+		if err != nil {
 			c.Handle(500, "Download -> CreateArchive "+archivePath, err)
 			return
 		}
