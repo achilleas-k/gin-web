@@ -375,3 +375,8 @@ textarea#description {
   font-size: 1rem;
   vertical-align: middle;
 }
+.doi.itemlist {
+    font-size: 1.0em;
+    list-style: none;
+    padding: 0;
+}
