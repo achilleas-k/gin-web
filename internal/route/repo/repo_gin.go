@@ -22,6 +22,8 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+const RELEASE_NEWTAG = "repo/release/newtag"
+
 func serveAnnexedData(ctx *context.Context, name string, cpt *captcha.Captcha, buf []byte) error {
 	keyparts := strings.Split(strings.TrimSpace(string(buf)), "/")
 	key := keyparts[len(keyparts)-1]
@@ -169,4 +171,15 @@ func AnnexGetKey(c *context.Context) {
 	if err != nil {
 		c.ServerError("AnnexGetKey", err)
 	}
+}
+
+func NewTag(c *context.Context) {
+	tagname := c.Params(":tagname")
+	log.Trace("Preparing tag %s", tagname)
+	c.Data["Title"] = c.Tr("repo.release.new_release")
+	c.Data["PageIsReleaseList"] = true
+	c.Data["tag_target"] = c.Repo.Repository.DefaultBranch
+	c.Data["tag_name"] = tagname
+	renderReleaseAttachmentSettings(c)
+	c.HTML(200, RELEASE_NEWTAG)
 }

@@ -1,0 +1,35 @@
+{{template "base/head" .}}
+<div class="repository new release">
+	{{template "repo/header" .}}
+	<div class="ui container">
+		<h2 class="ui dividing header">
+			Tagging commit H with {{.tag_name}}
+		</h2>
+		{{template "base/alert" .}}
+		<form class="ui form grid" action="{{.Link}}" method="post">
+			{{.CSRFTokenHTML}}
+			<div class="eleven wide column">
+				<div class="ui labeled button" tabindex="0">
+					<div class="gin doi">DOI</div>
+					<div class="gin doinr">{{.tag_name}}</div>
+				</div>
+				<div>
+				This will tag your repository with stuff.
+				</div>
+			</div>
+			<div class="ui container">
+				<div class="ui divider"></div>
+				<div class="field">
+					<button class="ui green button">
+						Create tag
+					</button>
+					<a class="ui basic button" href="{{.RepoLink}}">
+						{{.i18n.Tr "repo.release.cancel"}}
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+{{template "base/footer" .}}

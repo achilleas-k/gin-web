@@ -559,6 +559,7 @@ func runWeb(c *cli.Context) error {
 			m.Post("/delete", repo.DeleteRelease)
 			m.Get("/edit/*", repo.EditRelease)
 			m.Post("/edit/*", bindIgnErr(form.EditRelease{}), repo.EditReleasePost)
+			m.Get("/newtag/:tagname", repo.NewTag)
 		}, repo.MustBeNotBare, reqRepoWriter, func(c *context.Context) {
 			c.Data["PageIsViewFiles"] = true
 		})
