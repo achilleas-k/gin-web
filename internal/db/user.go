@@ -5,7 +5,6 @@
 package db
 
 import (
-	"bufio"
 	"bytes"
 	"crypto/sha256"
 	"crypto/subtle"
@@ -15,7 +14,6 @@ import (
 	_ "image/jpeg"
 	"image/png"
 	"os"
-	"path"
 	"path/filepath"
 	"strings"
 	"time"
@@ -36,7 +34,6 @@ import (
 	"github.com/G-Node/gogs/internal/errutil"
 	"github.com/G-Node/gogs/internal/strutil"
 	"github.com/G-Node/gogs/internal/tool"
-	"golang.org/x/crypto/bcrypt"
 )
 
 // USER_AVATAR_URL_PREFIX is used to identify a URL is to access user avatar.
@@ -329,11 +326,6 @@ func (u *User) EncodePassword() {
 	u.Passwd = fmt.Sprintf("%x", newPasswd)
 }
 
-func (u *User) OldGinVerifyPassword(plain string) bool {
-	err := bcrypt.CompareHashAndPassword([]byte(u.Passwd), []byte(plain))
-	return err == nil
-}
-
 // ValidatePassword checks if given password matches the one belongs to the user.
 func (u *User) ValidatePassword(passwd string) bool {
 	if u.OldGinVerifyPassword(passwd) {
@@ -617,7 +609,7 @@ func CreateUser(u *User) (err error) {
 		return ErrEmailAlreadyUsed{args: errutil.Args{"email": u.Email}}
 	}
 
-	if IsBlockedDomain(u.Email) {
+	if !isAddressAllowed(u.Email) {
 		return ErrBlockedDomain{u.Email}
 	}
 
